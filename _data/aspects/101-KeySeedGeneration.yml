@@ -19,7 +19,7 @@ description: >
 
 level_one:
   - The [cryptographic keys](#key) and [seeds](#seed) are created by the [actor](#actor) who will be using it. This is an attempt to protect the confidentiality of the key. Any system that requires one actor to transfer a key or seed to another actor after generating it will fail to achieve Level I.
-  - Notably, transferring a cryptographic secret for backup purposes does not violate the above requirement, however those secrets must be transmitted and stored in a [strongly encrypted](#strong-encryption) format.
+  - Notably, transferring a cryptographic secret for backup purposes does not violate the above requirement, however those secrets must be transmitted and stored in a [strongly encrypted](#strong-encryption) format. For the creation of the secondary encryption keys the same rules apply.
 
 level_two:
   - The [key](#key) or [seed](#seed) generation methodology is validated prior to use. Software that is used to generate seeds should be free from any features that restrict the generated seed to conform to deterministic values and features that store or transmit the generated seed to another [actor](#actor), except where such features enhance the effective security of the software (e.g. [DRBGs](#drbg)).

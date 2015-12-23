@@ -3,11 +3,13 @@ id: wallet
 file: Wallet
 term: Wallet
 description: >
-  In the context of most cryptocurrencies, a wallet is a public-private keypair, where some encoding of the public key (an [address](#address)) can be used in transaction outputs to transfer funds. The private key can then be used to generate a valid signature for a transaction spending those funds.
-  In practice, however, 'wallet' usually refers to an application that manages a large number of these keypairs, allowing a new address to be used for each transactions. Wallet applications generally fall into one of two categories:  
+  In the context of most cryptocurrencies, a wallet consists out of one or several public-private keypairs, where some encoding or derivation of a public key (an [address](#address)) can be used in transaction outputs to receive funds. The private key can then be used to generate a valid signature for a transaction spending those funds.
+  In practice, however, 'wallet' usually refers to an application that manages a large number of these keypairs, allowing a new address to be used for each transactions. Wallet applications are responsible for keeping track of the balances of their addresses and also for the creation of valid spending transactions. They generally fall into one of two categories:  
     -  JBOK (Just a Bunch of Keys) Wallets where the wallet uses a [PRNG](#prng) to generate each keypair and stores them for use.  
-    -  [HD (Hierarchical Deterministic) Wallets](#hd-wallet) which derives an arbitrary number of keypairs from one random [seed](#seed).
+    -  [HD (Hierarchical Deterministic) Wallets](#hd-wallet) which derives an arbitrary number of keypairs from one random [seed](#seed) or one extended key.
 
-  Wallet software can introduce additional complexity, for example by combining multiple keypairs into single addresses, as in the case of a [multi-signature](#multisig) wallet.
+  Wallet software can introduce additional complexity, for example by combining multiple keypairs into single addresses, as in the case of a [multi-signature](#multisig) wallet where several wallet instances need to collaboratively sign transaction-proposals.
 
-  For the purposes of this document, the term 'wallet' refers to some *collection* of cryptocurrency [addresses](#address).
+  A cold wallet refers to a system to generate and store keys offline as well as creating transactions offline. It is important that the system never was connected to the Internet. Only addresses and signed transactions are allowed to exit this system and only transaction-proposals are allowed to enter, usually in the form of QR-codes. 
+
+  For the purposes of this document, the term 'wallet' refers to some *collection* of cryptocurrency [addresses](#address) or the wallet software.
